@@ -11,14 +11,34 @@ body {
   margin: 0;
   padding: 15px;
 }
-
-.artwork {
-  margin-bottom: 100px;
+  
+h1 {
+  font-weight: 100;
+  letter-spacing: 6px;
+  font-size: 22px;
+}
+  
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  padding: 30px;
 }
 
-img {
-  max-width: 800px;
-  width: 90%;
+.artwork {
+  text-align: center;
+}
+
+.artwork img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.artwork img:hover {
+  opacity: 0.8;
 }
 
 .info {
@@ -32,58 +52,80 @@ img {
 
   letter-spacing: 2px;
 }
+  
+#lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
 
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0,0,0,0.95);
+
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1000;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+}
 </style>
 </head>
 
 <body>
 
 <h1>archive</h1>
-
+<div class="gallery">
+  
 <div class="artwork">
-  <img src="Untitled_0.jpeg">
+  <img src="Untitled_0.jpeg" onclick="openImage(this.src)">
   <div class="info">
     Untitled 0, 2025<br>
   </div>
 </div>
 
 <div class="artwork">
-  <img src="Untitled_1.jpeg">
+  <img src="Untitled_1.jpeg" onclick="openImage(this.src)">
   <div class="info">
     Untitled 1, 2025<br>
   </div>
 </div>
 
 <div class="artwork">
-  <img src="Inverness.jpeg">
+  <img src="Inverness.jpeg" onclick="openImage(this.src)">
   <div class="info">
     Inverness, 2025<br>
   </div>
 </div>
 
 <div class="artwork">
-  <img src="Neoteny.jpeg">
+  <img src="Neoteny.jpeg" onclick="openImage(this.src)">
   <div class="info">
     Neoteny, 2025<br>
   </div>
 </div>
 
 <div class="artwork">
-  <img src="Bundle1.jpg">
+  <img src="Bundle1.jpg" onclick="openImage(this.src)">
   <div class="info">
     Bundle1, 2026<br>
   </div>
 </div>
 
 <div class="artwork">
-  <img src="Bundle2.jpg">
+  <img src="Bundle2.jpg" onclick="openImage(this.src)">
   <div class="info">
     Bundle2, 2026<br>
   </div>
 </div>
 
 <div class="artwork">
-  <img src="Nude.jpeg">
+  <img src="Nude.jpeg" onclick="openImage(this.src)">
   <div class="info">
     Nude, 2026<br>
     Radiohead, 2008.
@@ -91,14 +133,14 @@ img {
 </div>
 
 <div class="artwork">
-  <img src="Hm.jpeg">
+  <img src="Hm.jpeg" onclick="openImage(this.src)">
   <div class="info">
     Shadows and Dust, 2026<br>
   </div>
 </div>
 
 <div class="artwork">
-  <img src="Gibbon.jpeg">
+  <img src="Gibbon.jpeg" onclick="openImage(this.src)">
   <div class="info">
     Gibbon, 2026<br>
     Wax and Wane, Cocteau Twins, 1982.
@@ -106,7 +148,7 @@ img {
 </div>
 
 <div class="artwork">
-  <img src="Ayurveda.jpg">
+  <img src="Ayurveda.jpg" onclick="openImage(this.src)">
   <div class="info">
     Ayurveda, 2026<br>
     Secret Garden, Madonna, 1992.
@@ -114,19 +156,35 @@ img {
 </div>
 
 <div class="artwork">
-  <img src="Cordelia.jpeg">
+  <img src="Cordelia.jpeg" onclick="openImage(this.src)">
   <div class="info">
     Cordelia, 2026<br>
   </div>
 </div>
 
 <div class="artwork">
-  <img src="か.jpg">
+  <img src="か.jpg" onclick="openImage(this.src)">
   <div class="info">
     か, 2026<br>
   </div>
 </div>
 
+<div id="lightbox" onclick="closeImage()">
+  <img id="lightbox-img">
+</div>
+
+<script>
+
+function openImage(src) {
+  document.getElementById("lightbox").style.display = "flex";
+  document.getElementById("lightbox-img").src = src;
+}
+
+function closeImage() {
+  document.getElementById("lightbox").style.display = "none";
+}
+
+</script>
 
 </body>
 </html>
