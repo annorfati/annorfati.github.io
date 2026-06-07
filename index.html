@@ -160,8 +160,41 @@ h1 {
 
   .artwork {
     animation: none;
+    
+  #prev-btn,
+  #next-btn {
+    display: none;
   }
 
+  #mobile-nav {
+    display: flex;
+
+    gap: 40px;
+
+    margin-top: 20px;
+
+    margin-left: 25px;
+  }
+
+  #mobile-prev,
+  #mobile-next {
+
+    background: none;
+    border: none;
+
+    color: #DFD7D7;
+
+    font-size: 24px;
+
+    cursor: pointer;
+  }
+
+}
+  }
+  
+#mobile-nav {
+  display: none;
+}
   #prev-btn,
   #next-btn {
 
@@ -204,6 +237,10 @@ h1 {
   font-size: 14px;
 
   letter-spacing: 2px;
+}
+
+#mobile-nav {
+  display: none;
 }
   
 #overlay {
@@ -436,17 +473,25 @@ footer {
   
 <div id="lightbox" onclick="closeImage()">
 
-  <div id="lightbox-content">
+ <div id="lightbox-content">
 
-    <button id="prev-btn">←</button>
+  <button id="prev-btn">←</button>
 
-    <img id="lightbox-img">
+  <img id="lightbox-img">
 
-    <button id="next-btn">→</button>
+  <button id="next-btn">→</button>
 
-    <div id="lightbox-caption"></div>
+  <div id="lightbox-caption"></div>
+
+  <div id="mobile-nav">
+
+    <button id="mobile-prev">←</button>
+
+    <button id="mobile-next">→</button>
 
   </div>
+
+</div>
 
 </div>
 
@@ -523,7 +568,25 @@ document.getElementById("prev-btn").onclick = function(event) {
   );
 
 };
+  
+document.getElementById("mobile-next").onclick = function(event) {
 
+  event.stopPropagation();
+
+  showImage((currentIndex + 1) % images.length);
+
+};
+
+document.getElementById("mobile-prev").onclick = function(event) {
+
+  event.stopPropagation();
+
+  showImage(
+    (currentIndex - 1 + images.length) % images.length
+  );
+
+};
+  
 function updateOpacity() {
 
   const artworks =
