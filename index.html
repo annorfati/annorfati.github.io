@@ -295,9 +295,7 @@ footer {
 <body>
   
 <div id="overlay">
-  <div id="enter-button">
-    enter archive
-  </div>
+ <div id="enter-button"></div>
 </div>
   
 <h1>archive</h1>
@@ -462,6 +460,24 @@ let currentIndex = 0;
 const images = Array.from(
   document.querySelectorAll(".artwork img")
 );
+
+const text = "enter archive";
+let i = 0;
+
+function typeWriter() {
+
+  if (i < text.length) {
+
+    document.getElementById("enter-button").innerHTML +=
+      text.charAt(i);
+
+    i++;
+
+    setTimeout(typeWriter, 220);
+
+  }
+
+}
   
 function openImage(img) {
 
@@ -572,6 +588,8 @@ if (window.innerWidth <= 768) {
   updateOpacity();
 
 }
+
+typeWriter();
   
 </script>
 
