@@ -79,6 +79,8 @@ h1 {
   animation: fadeIn 2s forwards;
 
   animation-delay: 1s;
+
+  transition: opacity 1s ease;
 }
 
 .gallery {
@@ -299,8 +301,8 @@ footer {
 </div>
   
 <h1>an online archive</h1>
-<p class="subtitle">
-  just having fun and making art :)
+<p class="subtitle" id="subtitle">
+  just having fun and making art
 </p>
 
 <div class="gallery">
@@ -589,6 +591,35 @@ if (window.innerWidth <= 768) {
 
 }
 
+const subtitles = [
+  "just having fun and making art",
+  ":)",
+  "amor fati",
+  "annorfati"
+];
+
+let subtitleIndex = 0;
+
+setInterval(function() {
+
+  const subtitle =
+    document.getElementById("subtitle");
+
+  subtitle.style.opacity = "0";
+
+  setTimeout(function() {
+
+    subtitleIndex =
+      (subtitleIndex + 1) % subtitles.length;
+
+    subtitle.innerHTML =
+      subtitles[subtitleIndex];
+
+    subtitle.style.opacity = "1";
+
+  }, 1000);
+
+}, 5000);
 setTimeout(typeWriter, 3000);
   
 </script>
