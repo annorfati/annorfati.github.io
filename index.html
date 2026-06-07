@@ -34,6 +34,39 @@ h1 {
   }
 }
 
+@keyframes enterFade {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+@keyframes pulse {
+
+  0% {
+    opacity: 0.35;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.25;
+  }
+
+}
+
+
 .subtitle {
   opacity: 0;
 
@@ -60,30 +93,8 @@ h1 {
 
   opacity: 0.35;
 
-  animation: pulse 10s infinite;
+  animation-play-state: paused;
 }
-
-@keyframes pulse {
-
-  0% {
-    opacity: 0.35;
-  }
-
-  30% {
-    opacity: 1;
-  }
-
-  70% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0.25;
-  }
-
-}
-
-
 
 .artwork img {
   width: 100%;
@@ -181,6 +192,10 @@ h1 {
   letter-spacing: 6px;
 
   cursor: pointer;
+  
+  opacity: 0;
+
+  animation: enterFade 4s forwards;
 }
   
 </style>
@@ -316,6 +331,10 @@ function closeImage() {
 document.getElementById("enter-button").onclick = function() {
 
   document.getElementById("overlay").style.opacity = "0";
+
+  document.querySelectorAll(".artwork").forEach(function(item) {
+    item.style.animationPlayState = "running";
+  });
 
   setTimeout(function() {
 
