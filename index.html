@@ -164,30 +164,18 @@ h1 {
 
   #prev-btn,
   #next-btn {
-    display: none;
-  }
 
-  #mobile-nav {
-    display: flex;
+  display: block;
 
-   justify-content: center;
+  position: fixed;
 
-   gap: 50px;
+  bottom: 40px;
 
-   width: 100%;
- 
-   margin-top: 20px;
-  }
+  top: auto;
 
-  #mobile-prev,
-  #mobile-next {
-    background: none;
-    border: none;
-    color: #DFD7D7;
-    font-size: 24px;
-    cursor: pointer;
-  }
+  transform: none;
 
+  opacity: 1;
 }
   
 #mobile-nav {
@@ -458,14 +446,6 @@ footer {
 
   <div id="lightbox-caption"></div>
 
-  <div id="mobile-nav">
-
-    <button id="mobile-prev">←</button>
-
-    <button id="mobile-next">→</button>
-
-  </div>
-
 </div>
 
 </div>
@@ -544,22 +524,6 @@ document.getElementById("prev-btn").onclick = function(event) {
 
 };
   
-document.getElementById("mobile-next").onclick = function(event) {
-
-  event.stopPropagation();
-
-  showImage((currentIndex + 1) % images.length);
-
-};
-
-document.getElementById("mobile-prev").onclick = function(event) {
-
-  event.stopPropagation();
-
-  showImage(
-    (currentIndex - 1 + images.length) % images.length
-  );
-
 };
   
 function updateOpacity() {
