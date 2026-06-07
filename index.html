@@ -638,11 +638,11 @@ function desktopFade() {
   let scrollingDown =
     window.scrollY > lastScrollTop;
 
- const ordered = scrollingDown
-  ? [...artworks]
-  : [...artworks].reverse();
+  const ordered = scrollingDown
+    ? [...artworks]
+    : [...artworks].reverse();
 
-ordered.forEach(function(item, index)
+  ordered.forEach(function(item, index) {
 
     setTimeout(function() {
 
