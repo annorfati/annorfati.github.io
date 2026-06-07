@@ -172,10 +172,13 @@ h1 {
 
     transform: none;
 
-    position: static;
+   position: static;
 
-    font-size: 24px;
-  }
+  display: inline-block;
+
+  margin-top: 15px;
+
+  opacity: 1;
 
 }
 
@@ -550,6 +553,12 @@ function updateOpacity() {
       Math.max(0.25, opacity);
 
     item.style.opacity = opacity;
+    
+  const caption = item.querySelector(".info");
+
+if (caption) {
+  caption.style.opacity = Math.max(0.4, opacity);
+}
 
   });
 
