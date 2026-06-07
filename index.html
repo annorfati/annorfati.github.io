@@ -591,13 +591,9 @@ if (caption) {
 
 }
 
-if (window.innerWidth <= 768) {
+window.addEventListener("scroll", updateOpacity);
 
-  window.addEventListener("scroll", updateOpacity);
-
-  updateOpacity();
-
-}
+updateOpacity();
 
 const subtitles = [
   "just having fun and making art",
@@ -630,49 +626,6 @@ setInterval(function() {
 }, 9000);
 setTimeout(typeWriter, 3000);
 
-function desktopFade() {
-
-  const artworks =
-    document.querySelectorAll(".artwork");
-
-  let scrollingDown =
-    window.scrollY > lastScrollTop;
-
-  const ordered = scrollingDown
-    ? [...artworks]
-    : [...artworks].reverse();
-
-  ordered.forEach(function(item, index) {
-
-    setTimeout(function() {
-
-      if (scrollingDown) {
-
-        item.style.opacity = "0.3";
-
-      } else {
-
-        item.style.opacity = "1";
-
-      }
-
-    }, index * 120);
-
-  });
-
-  lastScrollTop = window.scrollY;
-
-}
-  
-  if (window.innerWidth > 768) {
-
-  window.addEventListener(
-    "scroll",
-    desktopFade
-  );
-
-}
-  
 </script>
 
 </body>
