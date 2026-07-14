@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body{
+    background:#282020;
+    color:#A28B8B;
+    font-family:Commit Mono, monospace;
+    margin:0;
+    padding:20px;
+    text-align:center;
+}
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+.home-link{
+
+    display:inline-block;
+    margin-top:20px;
+    margin-bottom:20px;
+
+    color:#CBBEBE;
+    text-decoration:none;
+
+    letter-spacing:3px;
+    font-size:14px;
+
+    opacity:.6;
+    transition:.3s;
+
+}
+
+.home-link:hover{
+    opacity:1;
+}
+
+h1{
+
+    font-weight:100;
+    font-size:22px;
+    letter-spacing:6px;
+
+    margin-top:10px;
+
+    opacity:0;
+    animation:fadeIn 2s forwards;
+
+}
+
+.subtitle{
+
+    font-size:13px;
+    letter-spacing:2px;
+    color:#CBBEBE;
+
+    margin-bottom:70px;
+
+    opacity:0;
+    animation:fadeIn 2s forwards;
+    animation-delay:.5s;
+
+}
+
+.collections{
+
+    max-width:720px;
+    margin:auto;
+
+}
+
+.collection{
+
+    display:block;
+    text-decoration:none;
+    color:inherit;
+
+    text-align:left;
+
+    padding:45px 0;
+
+    border-bottom:1px solid rgba(203,190,190,.15);
+
+    opacity:0;
+    animation:fadeIn 1.5s forwards;
+
+    transition:
+        opacity .35s ease,
+        transform .35s ease,
+        border-color .35s ease;
+
+}
+
+.collection:nth-child(1){animation-delay:.8s;}
+.collection:nth-child(2){animation-delay:1s;}
+.collection:nth-child(3){animation-delay:1.2s;}
+.collection:nth-child(4){animation-delay:1.4s;}
+.collection:nth-child(5){animation-delay:1.6s;}
+
+.collection:hover{
+
+    transform:translateX(8px);
+    border-color:rgba(223,215,215,.35);
+
+}
+
+.collection-title{
+
+    font-size:19px;
+    letter-spacing:3px;
+
+    color:#DFD7D7;
+
+}
+
+.collection-description{
+
+    margin-top:18px;
+
+    font-size:13px;
+    line-height:1.8;
+
+    color:#CBBEBE;
+
+}
+
+.collection-footer{
+
+    margin-top:25px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    font-size:12px;
+    letter-spacing:2px;
+
+    opacity:.6;
+
+}
+
+.arrow{
+
+    transition:transform .35s ease;
+
+}
+
+.collection:hover .arrow{
+
+    transform:translateX(10px);
+
+}
+
+.collection:hover .collection-title{
+
+    opacity:1;
+
+}
+
+.collection:hover .collection-description{
+
+    color:#DFD7D7;
+
+}
+
+footer{
+
+    margin-top:120px;
+
+    font-size:11px;
+
+    opacity:.5;
+
+    letter-spacing:2px;
+
+}
+
+@media(max-width:700px){
+
+    .collections{
+
+        max-width:100%;
+
+    }
+
+    .collection{
+
+        padding:35px 0;
+
+    }
+
+    .collection-title{
+
+        font-size:17px;
+
+    }
+
+    .collection-description{
+
+        font-size:12px;
+
+    }
+
+    .collection-footer{
+
+        font-size:11px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<a class="home-link" href="index.html">
+home
+</a>
+
+<h1>collections</h1>
+
+<p class="subtitle">
+...🗒
+</p>
+
+<div class="collections">
+
+<a class="collection" href="metamorphosis.html">
+
+<div class="collection-title">
+metamorphosis
+</div>
+
+<div class="collection-footer">
+
+<span class="arrow">→</span>
+
+</div>
+
+</a>
+
+
+<a class="collection" href="flowers.html">
+
+<div class="collection-title">
+billets doux
+</div>
+
+<div class="collection-footer">
+
+<span class="arrow">→</span>
+
+</div>
+
+</a>
+
+
+<a class="collection" href="dreams.html">
+
+<div class="collection-title">
+dream journalling
+</div>
+
+<div class="collection-footer">
+
+<span class="arrow">→</span>
+
+</div>
+
+</a>
+
+</div>
+
+<footer>
+
+ongoing archive, 2025–
+
+</footer>
+
+</body>
+
+</html>
