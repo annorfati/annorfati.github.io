@@ -130,12 +130,24 @@ h1 {
     }
 }
 
-@media (max-width: 600px) {
-    .gallery {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        padding: 20px;
+@media(max-width:600px){
+
+    #pagination{
+        flex-direction:row;
+        justify-content:center;
+        align-items:center;
+        gap:15px;
+        flex-wrap:nowrap;
     }
+
+    .nav-btn{
+        font-size:13px;
+    }
+
+    .page-indicator{
+        min-width:60px;
+    }
+
 }
 
 .artwork{
@@ -1015,20 +1027,17 @@ function renderPagination(){
 
     pagination.innerHTML = "";
 
+    const mobile = window.innerWidth <= 600;
+
     const prev = document.createElement("button");
     prev.className = "nav-btn";
-    prev.textContent = "← newer";
+    prev.textContent = mobile ? "<" : "← newer";
     prev.disabled = currentPage === 1;
     prev.onclick = () => showPage(currentPage - 1);
 
-    const indicator = document.createElement("span");
-    indicator.style.letterSpacing = "2px";
-    indicator.style.opacity = "0.8";
-    indicator.textContent = `${currentPage}/${totalPages}`;
-
     const next = document.createElement("button");
     next.className = "nav-btn";
-    next.textContent = "older →";
+    next.textContent = mobile ? ">" : "older →";
     next.disabled = currentPage === totalPages;
     next.onclick = () => showPage(currentPage + 1);
 
@@ -1037,7 +1046,9 @@ function renderPagination(){
     pagination.append(next);
 
 }  
-
+  
+window.addEventListener("resize", renderPagination);
+  
 showPage(1);
 </script>
 
