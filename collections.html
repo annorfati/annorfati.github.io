@@ -86,14 +86,13 @@ h1{
 
     padding:45px 0;
 
-    border-bottom:1px solid rgba(203,190,190,.15);
+    border-bottom:1px solid rgba(203,190,190,.08);
 
     opacity:0;
     animation:fadeIn 1.5s forwards;
 
     transition:
         opacity .35s ease,
-        transform .35s ease,
         border-color .35s ease;
 
 }
@@ -105,8 +104,7 @@ h1{
 .collection:nth-child(5){animation-delay:1.6s;}
 
 .collection:hover{
-
-    transform:translateX(8px);
+    
     border-color:rgba(223,215,215,.35);
 
 }
@@ -118,43 +116,29 @@ h1{
 
     color:#DFD7D7;
 
-}
-
-.collection-description{
-
-    margin-top:18px;
-
-    font-size:13px;
-    line-height:1.8;
-
-    color:#CBBEBE;
+    transition:opacity .35s ease;
 
 }
 
-.collection-footer{
+.collection:hover .collection-title{
 
-    margin-top:25px;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    font-size:12px;
-    letter-spacing:2px;
-
-    opacity:.6;
+    color:#DFD7D7;
 
 }
 
 .arrow{
 
-    transition:transform .35s ease;
+    display:inline-block;
+    opacity:.5;
+    transition:
+        opacity .35s ease,
+        transform .35s ease;
 
 }
-
+    
 .collection:hover .arrow{
 
-    transform:translateX(10px);
+    transform:translateX(6px);
 
 }
 
@@ -163,11 +147,10 @@ h1{
     opacity:1;
 
 }
-
-.collection:hover .collection-description{
-
-    color:#DFD7D7;
-
+.collection-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
 footer{
@@ -236,45 +219,45 @@ home
 
 <a class="collection" href="metamorphosis.html">
 
-<div class="collection-title">
-metamorphosis
-</div>
+    <div class="collection-row">
 
-<div class="collection-footer">
+        <div class="collection-title">
+            metamorphosis
+        </div>
 
-<span class="arrow">→</span>
+        <span class="arrow">→</span>
 
-</div>
+    </div>
 
 </a>
 
 
-<a class="collection" href="flowers.html">
+<a class="collection" href="billets doux.html">
 
-<div class="collection-title">
-billets doux
-</div>
+    <div class="collection-row">
 
-<div class="collection-footer">
+        <div class="collection-title">
+            billets doux
+        </div>
 
-<span class="arrow">→</span>
+        <span class="arrow">→</span>
 
-</div>
+    </div>
 
 </a>
 
 
 <a class="collection" href="dreams.html">
 
-<div class="collection-title">
-dream journalling
-</div>
+    <div class="collection-row">
 
-<div class="collection-footer">
+        <div class="collection-title">
+            dream journalling
+        </div>
 
-<span class="arrow">→</span>
+        <span class="arrow">→</span>
 
-</div>
+    </div>
 
 </a>
 
