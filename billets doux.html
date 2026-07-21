@@ -58,13 +58,13 @@ h1 {
   width: 0;
 
   animation: typing 3.5s steps(11, end) forwards;
-  animation-delay: 4s;
+  animation-delay: 3s;
 }
 
 .rest {
   opacity: 0;
-  animation: fadeIn 0s forwards;
-  animation-delay: 7s;
+  animation: fadeIn 2.5s ease forwards;
+  animation-delay: 8s;
 }
   
 @keyframes typing {
@@ -109,8 +109,8 @@ h1 {
   cursor: pointer;
 }
 
-.constellation-link:hover {
-  opacity: 0.9;
+.constellation-link:hover .glow {
+    animation-duration:2s;
 }
 
 .content {
@@ -138,16 +138,8 @@ h1 {
     animation-delay:2s;
 }
 
-.heart {
-    animation-delay:3s;
-}
-
-.rest {
-    animation-delay:7.5s;
-}
-
 .line2 {
-    animation-delay:10s;
+    animation-delay:11s;
 }
 
 .line3 {
