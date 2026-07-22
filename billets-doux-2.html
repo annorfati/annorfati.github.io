@@ -114,26 +114,33 @@ h1 {
   line-height: 1.8;
 }
   
-.home-link {
-
-  display: inline-block;
-
-  margin-top: 50px;
+.back-link {
+  position: fixed;
+  left: 40px;
+  bottom: 40px;
 
   color: #CBBEBE;
-
   text-decoration: none;
-
   letter-spacing: 3px;
-
   transition: opacity 0.3s ease;
 }
 
-.home-link:hover {
+.home-link {
+  display: block;
+  text-align: center;
+  margin-top: 50px;
 
-  opacity: 0.6;
+  color: #CBBEBE;
+  text-decoration: none;
+  letter-spacing: 3px;
+  transition: opacity 0.3s ease;
 }
 
+.back-link:hover,
+.home-link:hover {
+  opacity: 0.6;
+}
+  
 footer {
 
   margin-top: 100px;
@@ -154,14 +161,19 @@ footer {
 <h1>billets doux </h1>
 
 <p class="subtitle">
-  #2, for [REDACTED]
+  02, for [REDACTED]
 </p>
 
 </div>
 
+<a class="back-link" href="billets-doux.html">
+  ← 01
+</a>
+
 <a class="home-link" href="index.html">
   home
 </a>
+
 
 <footer>
   ongoing website, 2026-
