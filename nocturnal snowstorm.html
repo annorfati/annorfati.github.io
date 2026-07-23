@@ -79,10 +79,88 @@ h1 {
 
 }
 
+.art-trigger {
+  cursor: pointer;
+}
+
+.art-trigger:hover {
+  animation-duration: 2.5s;
+}
+
+.art-overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(57, 82, 106, 0.45);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: opacity 0.8s ease;
+
+  z-index: 9999;
+}
+  
+.art-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.art-image {
+  max-width: 90vw;
+  max-height: 90vh;
+
+  width: auto;
+  height: auto;
+
+  object-fit: contain;
+
+  box-shadow:
+    0 0 30px rgba(0,0,0,.25),
+    0 0 80px rgba(180,210,255,.08);
+  
+  opacity: 0;
+  transform: scale(0.98);
+
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.art-overlay.show .art-image {
+  opacity: 1;
+  transform: scale(1);
+}
+
+ .art-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.art-caption {
+  margin-top: 18px;
+
+  color: #C5D3E0;
+
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-align: center;
+
+  opacity: 0.75;
+}
+  
 .heartbeat {
   display: inline-block;
   transform-origin: center;
-  animation: heartbeat 2.2s infinite;
+  animation: heartbeat 5s infinite;
 }
 
 @keyframes heartbeat {
@@ -157,7 +235,7 @@ h1 {
   transition: opacity 0.3s ease;
 }
 
-.back-link:hover,
+.forward-link:hover,
 .home-link:hover {
   opacity: 0.6;
 }
@@ -205,11 +283,11 @@ img {
 .line10 { animation-delay: 8s; }
 
 .heartbeat1 {
-  animation-delay: 5s;
+  animation-delay: 9s;
 }
 
 .heartbeat2 {
-  animation-delay: 6.5s;
+  animation-delay: 10.5s;
 }
   
 @media (max-width: 600px) {
@@ -243,7 +321,7 @@ img {
     margin-top: 40px;
     font-size: 13px;
   }
-
+  
   footer {
     margin-top: 60px;
     font-size: 10px;
@@ -288,7 +366,11 @@ img {
   
 <p class="line4">
     somehow –<br>
-    i spot your <span class="highlight glow">blue letterbox</span> from the driveway<br>
+    i spot your
+    <span class="art-trigger highlight glow" onclick="openArtwork()">
+        blue letterbox
+    </span>
+    from the driveway<br>
     that’s funny,<br>
     i don’t remember crossing the fence.
 </p>
@@ -329,7 +411,7 @@ img {
 
 </div>
 
-<a class="forward-link" href="billets doux.html">
+<a class="forward-link" href="billets-doux.html">
   01 →
 </a>
 
@@ -342,5 +424,34 @@ img {
   ongoing website, 2026-
 </footer>
 
+<div id="artOverlay" class="art-overlay" onclick="closeArtwork()">
+
+    <div class="art-container" onclick="event.stopPropagation()">
+
+        <img
+            src="Dancing in the Dark.jpg"
+            alt="Dancing in the Dark"
+            class="art-image">
+
+        <p class="art-caption">
+            Dancing in the Dark, 2026<br>
+        </p>
+
+    </div>
+
+</div>
+
+<script>
+
+function openArtwork() {
+    document.getElementById("artOverlay").classList.add("show");
+}
+
+function closeArtwork() {
+    document.getElementById("artOverlay").classList.remove("show");
+}
+
+</script>
+  
 </body>
 </html>
