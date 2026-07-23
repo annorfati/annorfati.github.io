@@ -36,6 +36,24 @@ h1 {
 
 }
 
+.visited * {
+    animation: none !important;
+}
+
+.visited .line1,
+.visited .line2,
+.visited .line3,
+.visited .line4,
+.visited .line5,
+.visited .line6,
+.visited h1,
+.visited .subtitle,
+.visited .heart,
+.visited .rest {
+    opacity: 1 !important;
+    width: auto !important;
+}
+  
 .subtitle {
 
   opacity: 0;
@@ -304,5 +322,20 @@ img {
   ongoing website, 2026-
 </footer>
 
+<script>
+
+const key = "billets-doux";
+const hour = 60 * 60 * 1000;
+
+const lastVisit = localStorage.getItem(key);
+
+if (lastVisit && Date.now() - lastVisit < hour) {
+    document.body.classList.add("visited");
+} else {
+    localStorage.setItem(key, Date.now());
+}
+
+</script>
+  
 </body>
 </html>
