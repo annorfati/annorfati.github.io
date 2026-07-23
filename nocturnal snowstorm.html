@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body {
+  background: #39526A;
+  color: #95AEC6;
+  font-family: Commit Mono, monospace;
+  text-align: center;
+  margin: 0;
+  padding: 15px;
+}
+
+h1 {
+  font-weight: 100;
+  letter-spacing: 6px;
+  font-size: 22px;
+
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+.subtitle {
+
+  opacity: 0;
+
+  font-size: 13px;
+
+  letter-spacing: 2px;
+
+  color: #C5D3E0;
+
+  animation: fadeIn 2s forwards;
+
+  animation-delay: 1s;
+}
+  
+.heart {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+
+  animation: typing 3.5s steps(11, end) forwards;
+  animation-delay: 3s;
+}
+
+.rest {
+  opacity: 0;
+  animation: fadeIn 2.5s ease forwards;
+  animation-delay: 8s;
+}
+  
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 11ch;
+  }
+}
+  
+.highlight {
+  color: #EEF2F6;
+}
+
+.glow {
+  display: inline-block;
+  animation: glow 4s ease-in-out infinite;
+}
+
+@keyframes glow {
+
+  0%,100% {
+    color:#CBBEBE;
+    text-shadow:
+      0 0 2px rgba(232,214,214,.15),
+      0 0 5px rgba(232,214,214,.08);
+  }
+
+  50% {
+    color:#EEE6E6;
+    text-shadow:
+      0 0 8px rgba(232,214,214,.7),
+      0 0 18px rgba(232,214,214,.4);
+  }
+
+}
+
+.content {
+
+  max-width: 700px;
+
+  margin: 100px auto;
+
+  text-align: left;
+
+  line-height: 1.8;
+}
+  
+.back-link {
+  position: fixed;
+  left: 40px;
+  bottom: 40px;
+
+  color: #C5D3E0;
+  text-decoration: none;
+  letter-spacing: 3px;
+  transition: opacity 0.3s ease;
+}
+
+.home-link {
+  display: block;
+  text-align: center;
+  margin-top: 50px;
+
+  color: #C5D3E0;
+  text-decoration: none;
+  letter-spacing: 3px;
+  transition: opacity 0.3s ease;
+}
+
+.back-link:hover,
+.home-link:hover {
+  opacity: 0.6;
+}
+  
+footer {
+
+  margin-top: 100px;
+
+  font-size: 11px;
+
+  opacity: 0.5;
+
+  letter-spacing: 2px;
+}
+  
+.content {
+  overflow-wrap: break-word;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 600px) {
+
+  body {
+    padding: 12px;
+  }
+
+  h1 {
+    font-size: 20px;
+    letter-spacing: 4px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+  }
+
+  .content {
+    margin: 50px auto;
+    line-height: 1.7;
+  }
+
+  .back-link {
+    left: 20px;
+    bottom: 20px;
+    font-size: 13px;
+  }
+
+  .home-link {
+    margin-top: 40px;
+    font-size: 13px;
+  }
+
+  footer {
+    margin-top: 60px;
+    font-size: 10px;
+  }
+
+}
+  
+</style>
+
+</head>
+
+<body>
+
+<h1>billets doux </h1>
+
+<p class="subtitle">
+ 00 nocturnal snowstorm
+</p>
+
+</div>
+
+<a class="back-link" href="billets doux.html">
+  ← 01
+</a>
+
+<a class="home-link" href="index.html">
+  home
+</a>
+
+
+<footer>
+  ongoing website, 2026-
+</footer>
+
+</body>
+</html>
